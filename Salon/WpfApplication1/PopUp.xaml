@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApplication1.PopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="PopUp" Height="200" Width="300" WindowStartupLocation="Manual">
+    <Grid>
+        <Label x:Name="label1" Content="Odabrani datum rodjenja:" FontSize="15" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Da li ste sigurni?" FontSize="15" HorizontalAlignment="Center" Margin="0 50 0 0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Da li je novi korisnik mladji od 12 godina?" FontSize="15" HorizontalAlignment="Center" Margin="0 90 0 0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonDa" Content="Da" HorizontalAlignment="Left" Margin="20 5" VerticalAlignment="Bottom" Width="75" Click="buttonDa_Click"/>
+        <Button x:Name="buttonNe" Content="Ne" HorizontalAlignment="Right" Margin="20 5" VerticalAlignment="Bottom" Width="75" Click="buttonNe_Click"/>
+    </Grid>
+</Window>

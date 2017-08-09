@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApplication1.NoviProizvod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="NoviProizvod" Height="430" Width="350" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label" Content="Naziv proizvoda:" HorizontalAlignment="Left" Margin="21,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Proizvodjac:" HorizontalAlignment="Left" Margin="21,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Kategorija:" HorizontalAlignment="Left" Margin="21,160,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelx" Content="Sifra Proizvoda:" HorizontalAlignment="Left" Margin="21,210,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Prodajna cena:" HorizontalAlignment="Left" Margin="21,260,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelStanje" Content="Pocetno stanje:" HorizontalAlignment="Left" Margin="21,310,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textBoxNaziv" HorizontalAlignment="Left" Height="23" Margin="141,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="textBoxProizvodjac" HorizontalAlignment="Left" Height="23" Margin="141,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="textBoxKategorija" HorizontalAlignment="Left" Height="23" Margin="141,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="textBoxSifraProizvoda" HorizontalAlignment="Left" Height="23" Margin="141,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" KeyDown="textBoxSifraProizvoda_KeyDown"/>
+        <TextBox x:Name="textBoxCena" HorizontalAlignment="Left" Height="23" Margin="141,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" KeyDown="textBoxCena_KeyDown"/>
+        <TextBox x:Name="textBoxStanje" HorizontalAlignment="Left" Height="23" Margin="141,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="80" KeyDown="textBoxStanje_KeyDown"/>
+        
+        <Button x:Name="buttonResetuj" Content="Resetuj" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="buttonResetuj_Click"/>
+        <Button x:Name="buttonPovratak" Content="Povratak" HorizontalAlignment="Left" Margin="20,0,0,10" VerticalAlignment="Bottom" Width="120" Height="30" Click="buttonPovratak_Click"/>
+        <Button x:Name="buttonUbaci" Content="Ubaci novi proizvod" HorizontalAlignment="Right" Margin="0,0,20,10" VerticalAlignment="Bottom" Width="120" Height="30" Click="buttonUbaci_Click"/>
+
+    </Grid>
+</Window>

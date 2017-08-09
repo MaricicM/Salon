@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApplication1.Lager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="Lager" Height="430" Width="860" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox x:Name="groupBoxPretraga" Header="Pretraga" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
+            <TextBox x:Name="textBoxPretraga" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TextChanged="textBoxPretraga_TextChanged"/>
+        </GroupBox>
+        <Button x:Name="buttonResetujPretragu" Content="Resetuj pretragu" HorizontalAlignment="Left" Margin="213,26,0,0" VerticalAlignment="Top" Width="120" Height="30" Click="buttonResetujPretragu_Click"/>
+        <Button x:Name="buttonNoviProizvod" Content="Novi Proizvod" HorizontalAlignment="Right" Margin="0,26,20,0" VerticalAlignment="Top" Height="30" Width="120" Click="buttonNoviProizvod_Click"/>
+        
+        <DataGrid x:Name="dataGridProizvodi" HorizontalAlignment="Left" Margin="20,76,0,0" VerticalAlignment="Top" Height="255" SelectionChanged="dataGridProizvodi_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" AlternatingRowBackground="LightBlue" AlternationCount="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="60" Binding="{Binding Path=SifraProizvoda}" Header="Sifra"/>
+                <DataGridTextColumn Width="120" Binding="{Binding Path=Naziv}" Header="Naziv proizvoda"/>
+                <DataGridTextColumn Width="120" Binding="{Binding Path=Proizvodjac}" Header="Proizvodjac"/>
+                <DataGridTextColumn Width="120" Binding="{Binding Path=Kategorija}" Header="Kategorija"/>
+                <DataGridTextColumn Width="60" Binding="{Binding Path=Cena, StringFormat=n}" Header="Cena"/>
+                <DataGridTextColumn Width="50" Binding="{Binding Path=Stanje}" Header="Stanje"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <GroupBox x:Name="groupBoxUnos" Header="Proizvod" HorizontalAlignment="Left" Margin="587,76,0,0" VerticalAlignment="Top" Height="255" Width="245">
+            <Grid>
+                <Label x:Name="labelProizvod" Content="Proizvod" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="labelStanje" Content="Trenutno stanje:" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label2" Content="Novi unos:" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxUnos" HorizontalAlignment="Right" Height="23" Margin="0,140,60,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" KeyDown="textBoxUnos_KeyDown"/>
+                <Label x:Name="label1" Content="kom." HorizontalAlignment="Right" Margin="0,140,20,0" VerticalAlignment="Top"/>
+                <Button x:Name="buttonUnesi" Content="Unesi" HorizontalAlignment="Right" Margin="0,0,45,20" VerticalAlignment="Bottom" Width="75" Click="buttonUnesi_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <Button x:Name="buttonPovratak" Content="Povratak" HorizontalAlignment="Left" Margin="20" VerticalAlignment="Bottom" Width="120" Height="30" Click="buttonPovratak_Click"/>
+        <Button x:Name="buttonIzbaci" Content="Izbaci proizvod" HorizontalAlignment="Left" Margin="230,0,0,20" VerticalAlignment="Bottom" Width="120" Height="30" IsEnabled="False" Click="buttonIzbaci_Click"/>
+        <Button x:Name="buttonIzmeni" Content="Izmeni podatke" HorizontalAlignment="Left" Margin="432,0,0,20" VerticalAlignment="Bottom" Width="120" Height="30" IsEnabled="False" Click="buttonIzmeni_Click"/>
+    </Grid>
+</Window>

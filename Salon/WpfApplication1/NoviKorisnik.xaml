@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApplication1.NoviKorisnik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="NoviKorisnik" Height="600" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label" Content="Ime:" HorizontalAlignment="Left" Margin="17,20,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Prezime:" HorizontalAlignment="Left" Margin="17,70,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelPol" Content="Pol:" HorizontalAlignment="Left" Margin="17,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelDatum" Content="Datum Rodjenja:" HorizontalAlignment="Left" Margin="17,170,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy3" Content="Telefon:" HorizontalAlignment="Left" Margin="17,220,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy4" Content="E-mail:" HorizontalAlignment="Left" Margin="17,270,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelAlergeni" Content="Poznati Alergeni:" HorizontalAlignment="Left" Margin="17,320,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelZabeleske" Content="Zabeleske:" HorizontalAlignment="Left" Margin="17,420,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textBoxIme" HorizontalAlignment="Left" Height="23" Margin="150,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220" LostFocus="textBoxIme_LostFocus"/>
+        <TextBox x:Name="textBoxPrezime" HorizontalAlignment="Left" Height="23" Margin="150,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220" KeyDown="textBoxPrezime_KeyDown" LostFocus="textBoxPrezime_LostFocus"/>
+
+        <RadioButton x:Name="radioZenski" Content="Zenski" HorizontalAlignment="Left" Margin="150,120,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="radioMuski" Content="Muski" HorizontalAlignment="Left" Margin="288,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelRadnoMesto" Content="Administrator" HorizontalAlignment="Left" Margin="152 120 0 0" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <!--<ComboBox x:Name="comboBoxRadnoMesto" HorizontalAlignment="Left" Margin="152,120,0,0" VerticalAlignment="Top" Width="218" Visibility="Collapsed"/>-->
+
+        <TextBox x:Name="textBoxDan" HorizontalAlignment="Left" Height="23" Margin="150,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25" KeyDown="textBoxDan_KeyDown"/>
+        <TextBox x:Name="textBoxMesec" HorizontalAlignment="Left" Height="23" Margin="191,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25" KeyDown="textBoxMesec_KeyDown"/>
+        <TextBox x:Name="textBoxGodina" HorizontalAlignment="Left" Height="23" Margin="232,170,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40" KeyDown="textBoxGodina_KeyDown"/>
+        <Label x:Name="label1" Content="/" FontSize="15" HorizontalAlignment="Left" Margin="175,165,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy" Content="/" FontSize="15" HorizontalAlignment="Left" Margin="216,165,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textBoxTelefon" HorizontalAlignment="Left" Height="23" Margin="150,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220"/>
+        <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="23" Margin="150,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="220"/>
+        <TextBox x:Name="textBoxAlergeni" HorizontalAlignment="Left" Height="80" Margin="150,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" AcceptsReturn="True"/>
+        <TextBox x:Name="textBoxZabeleske" HorizontalAlignment="Left" Height="80" Margin="150,420,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300" AcceptsReturn="True"/>
+
+        <Button x:Name="buttonReset" Content="Ocisti podatke" HorizontalAlignment="Left" Margin="17,521,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+        <Button x:Name="buttonUbaci" Content="Dodaj novog korisnika" HorizontalAlignment="Left" Margin="300,521,0,0" VerticalAlignment="Top" Width="150" Height="30"/>
+
+        <GroupBox x:Name="groupBox" Header="Pretraga" FontSize="14" HorizontalAlignment="Left" Margin="501,0,0,0" VerticalAlignment="Top">
+            <TextBox x:Name="textBoxPretraga" HorizontalAlignment="Left" Height="23" Margin="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TextChanged="textBoxPretraga_TextChanged"/>
+        </GroupBox>
+        <Button x:Name="buttonNoviKorisnik" Content="Novi Korisnik" HorizontalAlignment="Left" Margin="693,20,0,0" VerticalAlignment="Top" Width="80" Height="30" Click="buttonNoviKorisnik_Click"/>
+        <DataGrid x:Name="dataGridPrikaz" HorizontalAlignment="Left" Margin="501,70,0,0" VerticalAlignment="Top" Height="430" AlternatingRowBackground="LightBlue" AlternationCount="2" CanUserAddRows="False" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True" SelectionChanged="dataGridPrikaz_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Ime}" Header="Ime" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path=Prezime}" Header="Prezime" Width="152"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="buttonPovratak" Content="Povratak  &gt;" HorizontalAlignment="Left" Margin="673,521,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="buttonPovratak_Click"/>
+        <Button x:Name="buttonOtkaz" Content="Otkaz!" HorizontalAlignment="Left" Margin="175,339,0,0" VerticalAlignment="Top" Width="100" Height="30" IsEnabled="False" Visibility="Collapsed" Click="buttonOtkaz_Click"/>
+        <Button x:Name="buttonIzbrisi" Content="Izbrisi korisnika" HorizontalAlignment="Left" Margin="501,521,0,0" VerticalAlignment="Top" Width="100" Height="30" IsEnabled="False" Click="buttonIzbrisi_Click"/>
+    </Grid>
+</Window>
